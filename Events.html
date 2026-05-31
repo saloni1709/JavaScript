@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        #images img{
+            width: 200px;
+            height: 200px;
+            border: 2px solid blanchedalmond;
+            border-radius: 20px;
+        }
+
+        #images{
+            list-style: none;
+        }
+
+        #images li{
+            padding: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+   <div>
+    <ul id="images">
+        <li id="morpankh"><img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"></li>
+        <li id="nature"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9YYh5Fk1u9VsWWr1MhkyQeOzeNbtnnMO96g&s"></li>
+        <li id="camera"><img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"></li>
+        <li id="panda"><img src="https://tinypng.com/images/social/website.jpg"></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+   </div>
+
+</body>
+
+<script>
+    // document.getElementById('nature').onclick = function(){
+    //     alert('nature clicked')
+    // }
+
+    //  document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, true)
+
+    // document.getElementById('nature').addEventListener('click', function(e){
+    //     console.log("nature clicked");
+    //     // e.stopPropagation()
+    // }, true)
+
+
+    //   document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('nature').addEventListener('click', function(e){
+    //     console.log("nature clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();           // stops the link from opening
+    //     e.stopPropagation()          // stops bubbling
+    //     console.log('google clicked');
+    // }, false)
+// Now when you click on the "Google" link:
+// The page will not go to Google (preventDefault() stops it)
+// You'll see google clicked in the console
+// The UL (images) listener won't run either (because of stopPropagation())
+
+
+
+document.querySelector('#images').addEventListener('click', function(e){
+    console.log(e.target.parentNode);
+    let removeIt = e.target.parentNode
+    removeIt.remove()
+    // removeIt.parentNode.removeChild(removeIt)
+}, false)
+</script>
+
+</html>
